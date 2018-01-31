@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:id="@+id/root_item_golf_courses">
+
+
+    <ImageView
+        android:id="@+id/image_of_me"
+        android:layout_width="52dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/BLUE"
+        android:src="@drawable/me"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_of_golfballarrow"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/golfballs_arrow_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_of_me"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_courseName" />
+
+    <TextView
+        android:id="@+id/lbl_courseName"
+        style="@style/Text.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"
+        android:padding="1dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/image_of_me"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="G O L F   C O U R S E    N A M E" />
+
+    <TextView
+        android:id="@+id/lbl_Phone_text"
+        style="@style/Text.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="0dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_courseName"
+        tools:layout_editor_absoluteY="44dp"
+        tools:text="Phone" />
+
+    <TextView
+        android:id="@+id/lbl_PhoneNumber"
+        style="@style/Text.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:autoText="false"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="0dp"
+        android:phoneNumber="true"
+        app:layout_constraintEnd_toEndOf="@+id/lbl_courseName"
+        app:layout_constraintStart_toEndOf="@+id/lbl_Phone_text"
+        tools:layout_editor_absoluteY="44dp"
+        tools:text="919-919-9191" />
+
+    <TextView
+        android:id="@+id/lbl_TeeLength"
+        style="@style/Text.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_of_golfballarrow"
+        app:layout_constraintStart_toEndOf="@+id/image_of_golfballarrow"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Phone"
+        tools:text="5,000 yrds  6,000 yrds   7,000 yrds" />
+
+</android.support.constraint.ConstraintLayout>
