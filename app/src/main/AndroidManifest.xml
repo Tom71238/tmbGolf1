@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".registerNewUser" />
         <activity android:name=".View.SelectGolfCourse" />
-        <activity android:name=".View.gc_selected"></activity>
+=        <activity android:name=".View.gcDetailsWithPlayers"></activity>
     </application>
 
 </manifest>

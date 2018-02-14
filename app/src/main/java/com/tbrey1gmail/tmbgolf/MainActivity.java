@@ -27,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFBAuth;   //For FB auth.
                                     //Constantly checks this user auth statr (ex. if logged in)
     private FirebaseAuth.AuthStateListener mFBauthStateListener;
-    FirebaseDatabase mFBdatabase;   //For DB access
+    private FirebaseDatabase mFBdatabase;   //For DB access
     DatabaseReference mFBref;
+
 
     //screen var handling
     private EditText eMailAddr;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         mFBAuth = FirebaseAuth.getInstance();
 
-        mFBAuth.signOut(); //Put this here for testing so it forces me thru the signon/register page
+        //mFBAuth.signOut(); //Put this here for testing so it forces me thru the signon/register page
 
         // Someone has successfully logged in (???or out???)
         mFBauthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -60,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
+//        // Keep Copy on local device
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+//        // Write a string to node "disconnectmessage" when this client loses connection
+//        FirebaseDatabase.getInstance().getReference("disconnectmessage").onDisconnect().setValue("I disconnected!");
     }
 
     @Override
