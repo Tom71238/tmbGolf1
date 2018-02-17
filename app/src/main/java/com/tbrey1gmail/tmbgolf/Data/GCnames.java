@@ -7,22 +7,29 @@ import java.util.ArrayList;
 public class GCnames {
     //private String mGCname;
     private ArrayList<String> gcNames = new ArrayList<String>();
-
-    // Default constructor required for calls to DataSnapshot.getValue(User.class)
-    //public GCnames() {    }
+    private ArrayList<Integer> gcNamesFBindex = new ArrayList<Integer>();
 
     public void addGCname(String gc){
         gcNames.add(gc);
+    }
+    public void addGCindex(Integer gcIdx){
+        gcNamesFBindex.add(gcIdx);
     }
 
     public ArrayList<String> getGCnames(){
         return gcNames;
     }
+
+    public ArrayList<Integer> getGcNamesFBindex(){
+        return gcNamesFBindex;
+    }
+
     public String getGCname(int loc){
         return gcNames.get(loc);
     }
+
     public int lengthOfArray(){
+
         return gcNames.size();
     }
-
 }

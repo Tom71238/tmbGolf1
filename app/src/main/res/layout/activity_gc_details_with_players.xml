@@ -60,8 +60,8 @@
 
     <TextView
         android:id="@+id/tvTeesPlayed_lbl"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
+        android:layout_width="126dp"
+        android:layout_height="29dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="16dp"
         android:text="Tees Played"
@@ -70,30 +70,15 @@
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvCourseSlope_lbl"
         app:layout_constraintEnd_toStartOf="@+id/tvCourseSlope_lbl"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent" />
-
-    <EditText
-        android:id="@+id/etTeesPlayedID"
-        android:layout_width="74dp"
-        android:layout_height="37dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Tees"
-        android:inputType="none"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/etSlopeID"
-        app:layout_constraintEnd_toEndOf="@+id/tvTeesPlayed_lbl"
-        app:layout_constraintStart_toStartOf="@+id/tvTeesPlayed_lbl"
-        app:layout_constraintTop_toBottomOf="@+id/tvTeesPlayed_lbl" />
 
     <TextView
         android:id="@+id/tvCourseRating_lbl"
-        android:layout_width="0dp"
+        android:layout_width="127dp"
         android:layout_height="27dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Course Rating"
         android:textSize="18sp"
@@ -117,10 +102,10 @@
 
     <TextView
         android:id="@+id/tvCourseSlope_lbl"
-        android:layout_width="0dp"
-        android:layout_height="21dp"
+        android:layout_width="104dp"
+        android:layout_height="20dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="39dp"
+        android:layout_marginStart="24dp"
         android:text="Course Slope"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -145,49 +130,55 @@
 
     <EditText
         android:id="@+id/etHoleNumber_"
-        android:layout_width="328dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:fontFamily="serif-monospace"
-        android:text="01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18"
-        android:textAlignment="center"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSlopeID" />
-
-    <EditText
-        android:id="@+id/etHoleParsID"
-        android:layout_width="328dp"
-        android:layout_height="35dp"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:fontFamily="serif-monospace"
-        android:text="03 03 03 03 05 05 05 05 04 04 04 04 04 04 04 04 04 04"
-        android:textAlignment="center"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHoleNumber_" />
-
-    <EditText
-        android:id="@+id/etHoleHandicapID"
-        android:layout_width="328dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:fontFamily="serif-monospace"
         android:text="01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18"
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHoleParsID" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHole_lbl" />
+
+    <EditText
+        android:id="@+id/etHoleParsID"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:fontFamily="serif-monospace"
+        android:text="03 03 03 03 05 05 05 05 04 04 04 04 04 04 04 04 04 04"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVtvPar_lbl" />
+
+    <EditText
+        android:id="@+id/etHoleHandicapID"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:fontFamily="serif-monospace"
+        android:text="01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHdc_lbl" />
 
     <TextView
         android:id="@+id/tvPlayer_lbl"
-        android:layout_width="172dp"
+        android:layout_width="126dp"
         android:layout_height="21dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -200,10 +191,10 @@
 
     <TextView
         android:id="@+id/tvHDCindex_lbl"
-        android:layout_width="99dp"
+        android:layout_width="126dp"
         android:layout_height="34dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text='Handicap Index"'
         android:textAlignment="center"
         android:textStyle="bold"
@@ -212,7 +203,7 @@
 
     <TextView
         android:id="@+id/tvHandicapDiff_lbl"
-        android:layout_width="107dp"
+        android:layout_width="127dp"
         android:layout_height="38dp"
         android:layout_marginEnd="8dp"
         android:text="Handicap Differential"
@@ -297,43 +288,38 @@
         android:id="@+id/tvHole_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
         android:text="Hole:"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/etHoleNumber_"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTeesPlayedID" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinTeesPlayedID" />
 
     <TextView
         android:id="@+id/textVtvPar_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:text="Par"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/etHoleParsID"
-        app:layout_constraintEnd_toEndOf="@+id/tvHdc_lbl" />
+        app:layout_constraintStart_toStartOf="@+id/tvHole_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/etHoleNumber_" />
 
     <TextView
         android:id="@+id/tvHdc_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Hdc"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/etHoleHandicapID"
-        app:layout_constraintEnd_toStartOf="@+id/etHoleHandicapID"
-        app:layout_constraintHorizontal_bias="0.636"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textVtvPar_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/etHoleParsID" />
 
     <EditText
         android:id="@+id/etP1HdcIdxID"
         android:layout_width="84dp"
         android:layout_height="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="5.0"
         android:inputType="number"
@@ -396,7 +382,7 @@
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/etPlayer3nameID"
         app:layout_constraintEnd_toEndOf="@+id/tvHDCindex_lbl"
-        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="@+id/tvHDCindex_lbl" />
 
     <EditText
@@ -438,7 +424,24 @@
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/etP4HdcIdxID"
         app:layout_constraintEnd_toEndOf="@+id/etP3HdcDiffID"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/etP3HdcDiffID" />
+
+    <Spinner
+        android:id="@+id/spinTeesPlayedID"
+        android:layout_width="141dp"
+        android:layout_height="23dp"
+
+        android:layout_marginLeft="16dp"
+        android:entries="@array/tee_array"
+        android:prompt="@string/tee_prompt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etSlopeID"
+        app:layout_constraintEnd_toEndOf="@+id/tvTeesPlayed_lbl"
+
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvTeesPlayed_lbl" />
 
 </android.support.constraint.ConstraintLayout>

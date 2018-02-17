@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
     public void LoginOnClick(View v) {
         String email = eMailAddr.getText().toString();
         String pw = password.getText().toString();
+
+        //ToDo: Remove id/pw pump
+        email = "tbrey1@gmail.com";
+        pw = "tbrey1";
+
+
         pBarLogin.setVisibility(View.VISIBLE);
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(pw))  {

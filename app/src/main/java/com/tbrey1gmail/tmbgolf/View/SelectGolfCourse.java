@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +23,7 @@ import com.tbrey1gmail.tmbgolf.R;
 
 public class SelectGolfCourse extends AppCompatActivity {
     private static final String TAG = SelectGolfCourse.class.getSimpleName();
-    private DatabaseReference mFBref_root;
-    private DatabaseReference mFBref_message;
-    private DatabaseReference mFBref_goldCoursesList;
-    private DatabaseReference mFBref_playersRoundList;
+
     public GCnames mGCnames = new GCnames();
 
     gcNameAdapter adapter = new gcNameAdapter(this, mGCnames);
@@ -39,22 +35,13 @@ public class SelectGolfCourse extends AppCompatActivity {
 
         DatabaseReference mFBref_golfCourseInfoList;
         DatabaseReference mFBref_golfCourseNamesList;
-        DatabaseReference mFBref_testme;
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-
 
         super.onCreate(savedInstanceState);
 
-        //ToDo: Remove dummy data for GCnames
-        //Create N instances of golf course name
-        //final ArrayList<fake_gcName> gcNames = fake_gcName.createFakeGcNamesList(20);
-
-        //Read Golf courses
-
+        //Read Golf course names
         mFBref_golfCourseInfoList = FirebaseDatabase.getInstance().getReference("golfCourseInfoList");
         mFBref_golfCourseNamesList = mFBref_golfCourseInfoList.child("golfCourseNamesList");
-        mFBref_testme = FirebaseDatabase.getInstance().getReference("testme");
-        Log.d(TAG,"ref built:");
 
 
         mFBref_golfCourseNamesList.addValueEventListener(new ValueEventListener()  {
@@ -64,21 +51,19 @@ public class SelectGolfCourse extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot child  : dataSnapshot.getChildren()) {
-                    String what = child.getKey().toString();
+                    String what = child.getKey();
+                    Integer whatInt = Integer.parseInt(what);
                     String who = child.getValue().toString();
                     mGCnames.addGCname(who);
-                    Log.d(TAG,"dataSnapshot what, who =:" + what + "," + who);
+                    mGCnames.addGCindex(whatInt);
                 }
                 adapter.notifyDataSetChanged();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", databaseError.toException());
             }
         });
-        Log.d(TAG,"dataSnapshot got here");
-
         setContentView(R.layout.activity_list_gc);
 
         // Lookup the recyclerview in activity layout
@@ -121,11 +106,12 @@ public class SelectGolfCourse extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int pos = getAdapterPosition();
-                String gcSelected = mGCnames.getGCname((pos));
+                String gcSelected = mGCnames.getGCname((getAdapterPosition()));
                 Toast.makeText(SelectGolfCourse.this,gcSelected, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(SelectGolfCourse.this, gcDetailsWithPlayers.class);
                 intent.putExtra("gcSelected", gcSelected);
+                String tmp = String.valueOf(getAdapterPosition());
+                intent.putExtra("gcPos", tmp);
                 startActivity(intent);
             }
         }
